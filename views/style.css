@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.menu ul {
+    justify-content: center;
+    display: flex;
+    list-style: none;
+}
+
+.menu ul li {
+   padding: 15px;
+    margin: 20px;
+    cursor: pointer;
+    background-color: rgb(140, 138, 138, 0.556);
+    border-radius: 15px;
+    color: white;
+}
+
+.menu ul li :hover {
+padding: 10px;
+transition: 1s all;
+}
+.area-habitos {
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+}
+
+.habitos-table {
+    display: flex;
+    background-color: rgba(140, 138, 138, 0.556);
+    width: 1200px;
+    height: 100%;
+    border-radius: 5%;
+    flex-direction: column;
+    
+    
+}
+
+.habitos-table h1 {
+    font-weight: bold;
+    text-align: center;
+    padding: 7px;
+    color: white;
+    font-size: 40px;
+}
+
+.habitos-table .list  {
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   
+}
+
+.habitos_results {
+    color: white;
+    padding: 10px;
+    flex-wrap: wrap;
+    max-width: 400px;
+    
+   
+}
+
+.habitos_results p {
+    padding: 10px;
+    background-color: rgb(138, 138, 138);
+    border-radius: 10px;
+   
+}
+
+.create-area {
+    display: none;
+    padding: 30px;
+    justify-content: center;
+}
+
+.create-table {
+   
+    background-color: rgba(140, 138, 138, 0.556);
+    width: 1200px;
+    height: 500px;
+    border-radius: 5%;
+    display: flex;
+    align-items: center;   
+    flex-direction: column;
+    
+}
+
+.create-table h1 {
+    font-weight: bold;
+    
+    padding: 7px;
+    color: white;
+    font-size: 40px;
+}
+
+.input-area input {
+    width: 300px;
+    height: 40px;
+    border-style: none;
+    border-radius: 15px;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+
+
+}
+
+
+
+.input-area label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+.input-area button {
+    display: flex;
+    justify-content: center;
+    max-width: none;
+}
+
+.button-create {
+margin-top: 30px;
+ padding: 20px;
+ width: 320px;
+ border: none;
+ border-radius: 30px;
+ cursor: pointer;
+ font-size: large;
+ color: rgb(83, 81, 81);
+ font-family: sans-serif;
+ font-weight: bold;
+}
+
+.button-create:hover {
+    padding: 30px;
+    transition: 1s all;  
+}
+
+.editar {
+    display: none;
+
+    
+}
+
+.create-table-2 {
+    height: 900px;
+}
+.habito {
+    margin-top: 40px;
+    
+}
+

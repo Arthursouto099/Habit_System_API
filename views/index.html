@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../views/style.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <header>
+        <div class="menu">
+            <ul>
+                <li onclick="criarHabito()"><strong>CRIAR NOVO HÁBITO</strong></li>
+                <li><strong>DELETAR HÁBITO</strong></li>
+                <li onclick="exibirTelaEdit()"><strong>EDITAR HÁBITO</strong></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="section-1">
+        <div class="area-habitos" id="area-h">
+            <div class="habitos-table">
+                <h1>Hábitos</h1>
+
+                <div class="list">
+                    <div id="results">oii</div>
+                    
+
+                </div>
+            </div>
+
+           
+        </div>
+
+        <div class="create-area" id="create">
+            <div class="create-table">
+                <h1>CRIAÇÃO DE HABITOS</h1>
+                
+                    <div class="input-area">
+                        <label for="">
+                            <strong>NOME DO HÁBITO:</strong>
+                            <input type="text" id="input-nome">
+                        </label>
+                        <label for="">
+                            <strong>DESCRIÇÃO:</strong>
+                            <input type="text" id="input-desc">
+                        </label>
+                        <label for="">
+                            <strong>IDENTIDADE:</strong>
+                            <input type="text" id="input-id">
+                        </label>
+
+                        <button onclick="submit()" class="button-create">Criar Hábito</button>
+                   
+                    </div>
+
+                    
+                     
+                    
+              
+            </div>
+        </div>
+
+        <div class="editar create-area " id="editar-area">
+            <div class="create-table create-table-2">
+                <h1>EDITAR HÁBITO</h1>
+                <div class="input-area input-area-2">
+                    <label for="">
+                        <strong>NOME DO HÁBITO:</strong>
+                        <input type="text" id="input-nome-1">
+                    </label>
+                    <label for="">
+                        <strong>DESCRIÇÃO:</strong>
+                        <input type="text" id="input-desc-2">
+                    </label>
+                    <label for="">
+                        <strong>IDENTIDADE:</strong>
+                        <input type="text" id="input-id-3">
+                    </label>
+    
+                    <button onclick="exibirHabitoEditar()" class="button-create button_edit">Editar Hábito</button>
+               
+                </div>
+
+                <div class="habito">
+                    <div id= "result_id">oii</div>
+                </div>
+            </div>
+            </dic>
+            
+
+        
+    </section>
+
+    
+    
+    
+
+    <script src="../views/index.js"></script>
+
+
+</body>
+</html>
