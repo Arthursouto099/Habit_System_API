@@ -17,10 +17,6 @@ function exibirTodosHabitos(funcao) {
 exibirTodosHabitos(display)
 
 
-function listaDeIds(data) {
-   console.log(data)
-
-}
 
 // async function retornaData() {
 //     try {
@@ -38,8 +34,8 @@ async function retornaData() {
         const response = await fetch(urlGet)
         const data = await response.json()
         return data
-        
-    }catch(error) {
+
+    } catch (error) {
         console.error(error)
         throw error
     }
@@ -61,20 +57,23 @@ async function verificarId(id) {
     }
 
     return verificacao
-   
+
+}
+
+function verificaNumero(id) {
+    const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    let confirmacao = true
+    for (let letra of alfabeto) {
+        if (`${id}`.includes(letra)) {
+            confirmacao = false
+        }
+    }
+
+    return confirmacao
+
 }
 
 
-verificarId(5)
-.then(resultado => {
-    if(resultado === false) {
-        console.log('oii')
-    }
-})
-
-// if(verificarId(1) === true) {
-//     console.log('oii')
-// }
 
 
 function display(data) {
@@ -125,21 +124,22 @@ function submit() {
 
     createArea.style.display = "none"
     habitosArea.style.display = "flex"
-
-
-
-
-
-
 }
 
 
 
 function exibirTelaEdit() {
     const id = prompt("Digite o ID do hábito que deseja editar!")
+    if (typeof id !== 'string') return new Error("O tipo do ID é diferente de string")
+    else if (id === '') return alert("O campo id não pode ser vazio")
+    else if (verificaNumero(id) === false) {
+        alert("O id não pode conter letras")
+        return new Error("O ID não pode ser uma letra")
+
+    }
 
     verificarId(parseInt(id)).then(resultado => {
-        if(resultado === false) {
+        if (resultado === false) {
             alert("O ID INFORMADO NÃO EXISTE")
             return new Error("ID NÂO ENCONTRADO")
         }
@@ -186,8 +186,18 @@ function exibirHabitoEditar() {
 
     const id = prompt("Digite o ID do hábito que deseja editar novamente, o id deve ser o mesmo que o hábito abaixo!: ")
 
+    if (typeof id !== 'string') return new Error("O tipo do ID é diferente de string")
+
+    else if (id === '') return alert("O campo id não pode ser vazio")
+
+    else if (verificaNumero(id) === false) {
+        alert("O id não pode conter letras")
+        return new Error("O ID não pode ser uma letra")
+
+    }
+
     verificarId(parseInt(id)).then(resultado => {
-        if(resultado === false) {
+        if (resultado === false) {
             alert("O ID INFORMADO NÃO É O MESMO!")
             return new Error("ID NÂO ENCONTRADO")
         }
@@ -213,15 +223,24 @@ function exibirHabitoEditar() {
 
 function deletarHabito() {
     const id = prompt("Digite o ID do hábito: ")
+    if (typeof id !== 'string') return new Error("O tipo do ID é diferente de string")
+        
+    else if (id === '') return alert("O campo id não pode ser vazio")
+        
+    else if (verificaNumero(id) === false) {
+        alert("O id não pode conter letras")
+        return new Error("O ID não pode ser uma letra")
+
+    }
 
     verificarId(parseInt(id)).then(resultado => {
-        if(resultado === false) {
+        if (resultado === false) {
             alert("O ID INFORMADO NÃO EXISTE")
             return new Error("ID NÂO ENCONTRADO")
 
         }
     })
-    
+
 
 
     fetch(urlDelete + id, {
